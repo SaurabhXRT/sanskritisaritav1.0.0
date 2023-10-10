@@ -1,0 +1,382 @@
+:root {
+    --red: #6b9b85;
+    --black: #fff;
+    --green: #fff;
+    --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    transition: all .2s linear;
+
+}
+
+section {
+    padding: 2rem 9%;
+    margin-top: 8rem;
+
+}
+
+.cont {
+
+    margin: auto;
+    /* border: 1px solid green;*/
+    /*width: 60%;*/
+    text-align: center;
+    /*background: #fff;*/
+    margin-bottom: 2rem;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+header .logo {
+    color: var(--black);
+    font-size: 2.5rem;
+    font-weight: bolder;
+
+}
+
+header .logo i {
+    color: var(--green);
+
+}
+
+header .navbar a {
+    font-weight: bold;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    color: var(--light-color);
+}
+
+header .navbar a.active,
+header .navbar a:hover {
+    color: black;
+    background: #fff;
+
+}
+
+header .icons i,
+header .icons a {
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: #fff;
+    /* border-radius: 50%;*/
+    /* background: #eee;*/
+}
+
+header .icons i:hover,
+header .icons a:hover {
+    /* color: #fff;
+background: var(--green);*/
+    transform: rotate(360deg);
+}
+
+header .icons #menubars {
+    display: none;
+
+}
+
+section a {
+    color: black;
+}
+
+section .owl-carousel .item {
+    width: 100%;
+    height: 50rem;
+
+}
+
+section .owl-carousel .item .item-title {
+    padding: 30rem 4rem;
+
+    font-size: 2rem;
+    color: #fff;
+}
+
+section .owl-carousel {
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+}
+
+section .section-left .blog {
+    display: flex;
+    margin: 1rem 0rem;
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+
+}
+
+section .section-left .blog .blog-img {
+    width: 50%;
+    height: 15rem;
+}
+
+section .section-left .blog .blog-img #img {
+    width: 100%;
+    height: 100%;
+}
+
+section .section-left .blog .blogcontaint {
+    margin: 0rem 1rem;
+    font-size: 1.5rem;
+}
+
+/*.section-left{
+width: 90%;
+}*/
+#imgk {
+    width: 100%;
+
+}
+
+.section-box .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+    /*width: 90%;*/
+}
+
+.section-box .box-container .box {
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    /*border: .1rem solid rgba(0, 0, 0, .2);*/
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.section-box .box-container .box img {
+    height: 17rem;
+
+}
+
+.section-box .box-container .box p {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    text-align: left;
+}
+
+section .contact {
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    margin-top: 1rem;
+
+}
+
+section .contact .contact-form {
+    background-image: url('public/image-6.jpg');
+    background-size: cover;
+
+}
+
+section .contact .contact-form .form form {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+
+
+}
+
+section .contact .contact-form .form form label {
+    margin-top: 1.5rem;
+    font-size: 2rem;
+}
+
+section .contact .contact-form .form form input {
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 0.1rem solid #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 1rem;
+
+}
+
+section .contact .contact-form .form {
+    width: 40%;
+}
+
+#message {
+    margin-top: 1rem;
+    padding: 1rem 1rem;
+    border: 0.1rem solid #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 1rem;
+}
+
+section .contact .contact-form .form form button {
+    margin-top: 1.5rem;
+    width: fit-content;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 0.1rem solid #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 1rem;
+}
+
+footer {
+    background-color: black;
+    color: #fff;
+}
+
+footer .footer-1 {
+    display: flex;
+    padding: 2rem 9%;
+    justify-content: space-between;
+}
+
+footer .footer-1 .blogging h1 {
+    font-size: 2.5rem;
+}
+
+footer .footer-1 .blogging p {
+    font-size: 1.5rem;
+    padding: 1rem 0rem;
+}
+
+footer .last {
+    display: flex;
+    padding: 2rem 9%;
+    font-size: 1.5rem;
+    gap: 1.5rem;
+}
+
+footer .footer-1 .follow-us {
+    margin-right: 10rem;
+
+}
+
+footer .footer-1 .follow-us i {
+    font-size: 1.5rem;
+    padding: 1rem 0rem;
+    cursor: pointer;
+
+}
+
+footer .footer-1 .follow-us #twitter {
+    padding-left: 1rem;
+}
+
+.post-detail {
+    margin-top: 1.5rem;
+}
+
+@media(max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 1rem 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+@media(max-width:772px) {
+    header .icons #menubars {
+        display: inline-block;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: 0.1rem solid rgba(0, 0, 0, .2);
+        border-bottom: .1rem solid rgba(0, 0, 0, .2);
+        padding: 1rem;
+        /*clip-path: polygon(0 0,100% 0,100% 0, 0 0);*/
+        display: none;
+        text-align: left;
+    }
+
+    .pagination {
+        top: 96rem;
+    }
+
+    header .navbar a {
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 2rem;
+       color: var(--green);
+
+
+    }
+    section .owl-carousel .item {
+        width: 100%;
+        height: 25rem;
+
+    }
+
+    .section-left {
+        width: 100%;
+    }
+
+    section .section-left .blog .blog-img {
+        width: 95%;
+        height: 15rem;
+    }
+
+    section .section-left .blog .blogcontaint {
+        margin: 1rem;
+        font-size: 1.5rem;
+        width: 95%;
+    }
+
+    section .contact .contact-form .form {
+        width: 90%;
+    }
+
+    footer .footer-1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section .owl-carousel .item .item-title {
+        padding: 10rem 2rem;
+        font-size: 1.5rem;
+        color: #fff;
+    }
+
+}

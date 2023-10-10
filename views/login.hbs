@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <script src="login.js"></script>
+</head>
+
+
+<body>
+    <header>
+          <span><img id="logo" src="https://res.cloudinary.com/dar4ws6v6/image/upload/v1696946472/sanskriti-removebg-preview_bufsfk.png" alt=""></span>
+        <nav class="navbar" id="navbar">
+            <a href="/">home</a>
+            <a href="/signup">signup</a>
+            <a href="/login">login</a>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-bars" id="menubars" onclick="togglefunction()" onmouseleave="removetoggle()"></i>
+
+        </div>
+    </header>
+    <section>
+        <div class="login">
+            <form action="/auth/loginpost" method="post">
+                <label for="username"> username</label>
+                <input type="text" name="username" placeholder="username">
+                <label for="password">password</label>
+                <input type="text" name="password" placeholder="password">
+                <button type="submit">login</button>
+            </form>
+            <div class="signup-login">
+                <p>dont have an account?</p>
+                <a href="signup">signup here</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="indexview.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="indexview.js"></script>
+</head>
+
+
+<body>
+
+    <header>
+        <span><img id="logo" src="https://res.cloudinary.com/dar4ws6v6/image/upload/v1696946472/sanskriti-removebg-preview_bufsfk.png" alt=""></span>
+        <nav class="navbar" id="navbar">
+           <!-- <a href="/">home</a>
+            <a href="#latest-blog">latest blog</a>
+            <a href="#featured-blog">featured blog</a>
+            <a href="#contactus">contact us</a>
+
+            <a href="/signup"> signup</a> -->
+            {{#if username}}
+            <a href="/">home</a>
+            <a href="#latest-blog">latest news</a>
+            <a href="#featured-blog">featured news</a>
+           
+            <a href="/article">write an article</a>
+            <a href="/user/{{username}}">{{username}}</a>
+
+            <a href="/auth/logout">logout</a>
+            {{else}}
+            <a href="/">home</a>
+            <a href="#latest-blog">latest news</a>
+            <a href="#featured-blog">featured news</a>
+            <a href="#contactus">contact us</a>
+            <a href="/signup">login</a>
+            {{/if}}
+        </nav>
+        <div class="icons">
+            <i class="fas fa-bars" id="menubars" onclick="togglefunction()" onmouseleave="removetoggle()"></i>
+
+        </div>
+    </header>
+    <div class="options">
+        <div class="options-option">
+            <a href="/education">Education</a>
+            <a href="/technology">Technology</a>
+            <a href="/politics">Politics</a>
+            <a href="/entertainment">Entertainment</a>
+            <a href="/other">other</a>
+        </div>
+    </div>
+    
+    <section>
+        <div class="owl-carousel owl-theme">
+            {{#each carouselArticles}}
+             <a href="/{{this.urlTitle}}">
+            <div class="item" style="background-image: url('{{this.postimage}}'); background-size: cover;">
+                <div class="item-title" data-aos="slide-up">
+                   
+                        <p class="blog-title truncate-title">{{this.headingtitle}}</p>
+                   
+                    <div class="post-detail">
+                        <p>{{formatDate this.createdAt}}</p>
+                        <p>Posted by {{this.author.username}}</p>
+                    </div>
+                </div>
+            </div>
+            </a>
+            {{/each}}
+        </div>
+    </section>
+
+    <section id="latest-blog">
+       
+        <div class="section-left">
+            <h1>Latest news</h1>
+            {{#each latestArticle}}
+             <a href="/{{this.urlTitle}}">
+            <div class="blog" >
+                <div class="blog-img">
+                    <img id="img" src="{{this.postimage}}" alt="">
+                </div>
+                <div class="blogcontaint">
+                  <p class="blog-title truncate-title">{{this.headingtitle}}</p>
+
+                    <div class="post-detail">
+                        <p>{{formatDate this.createdAt}}</p>
+                        <p>Posted by {{this.author.username}}</p>
+                    </div>
+                </div>
+            </div>
+            </a>
+            {{/each}}
+        </div>
+         <button id="load-more-btn">Load More</button>
+      
+    </section>
+
+    <section class="section-box" id="featured-blog">
+        <h1>Featured news</h1>
+        <div class="box-container">
+            {{#each featuredArticles}}
+             <a href="/{{this.urlTitle}}">
+            <div class="box" >
+                <img id="imgk" src="{{this.postimage}}" alt="">
+                <p class="blog-title truncate-title">{{this.headingtitle}}</p>
+                <div class="post-detail">
+                    <p>{{formatDate this.createdAt}}</p>
+                    <p>Posted by {{this.author.username}}</p>
+                </div>
+            </div>
+            </a>
+            {{/each}}
+        </div>
+    </section>
+
+
+
+    <section id="contactus">
+        <h1>contact us</h1>
+        <div class="contact">
+            <div class="contact-form">
+                <div class="form">
+                    <form action="#" >
+                        <label for="name"> full name</label>
+                        <input type="text" placeholder="full name" required>
+                        <label for="email">email</label>
+                        <input type="text" placeholder="email" required>
+                        <label for="message">message</label>
+                        <textarea name="" placeholder="enter your message" id="message" cols="30" rows="10"
+                            required></textarea>
+                        <button>send message</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+  <footer>
+        <div class="footer-1">
+            <div class="blogging">
+                <h1>SanskritiSarita</h1>
+                <p>The reader's choice</p>
+                <p>Turn your ideology into perspective </p>
+
+            </div>
+            <div class="follow-us">
+                <h1>follow us on</h1>
+                <i class="fa-brands fa-instagram"></i>
+                <i id="twitter" class="fa-brands fa-twitter"></i>
+
+            </div>
+        </div>
+        <div class="last">
+            <h>	 &copy;Copyright 2023 SanskritiSarita </h>
+            <p>made with❤️ by Saurabh kumar</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            items: 1,
+            autoplayTimeout: 2000,
+            /* responsive:{
+                 0:{
+                     items:1
+                 },
+                 600:{
+                     items:3
+                 },
+                 1000:{
+                     items:5
+                 }
+             }*/
+        })
+
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 300,
+            duration: 1000,
+        });
+    </script>
+</body>
+
+</html>

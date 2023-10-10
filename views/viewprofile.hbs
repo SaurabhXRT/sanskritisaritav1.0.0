@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user.username}}</title>
+    <link rel="stylesheet" href="https://res.cloudinary.com/dar4ws6v6/raw/upload/v1696947636/profilesanskriti_xe8a4e.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  
+</head>
+<script>
+   function togglefunction() {
+    var x = document.getElementById("navbar");
+    if (x.style.display == "block") {
+        x.style.display = "none";
+    }
+    else {
+        x.style.display = "block";
+    }
+}
+</script>
+<style>
+
+
+</style>
+
+
+<body>
+    <header>
+         <span><img id="logo" src="https://res.cloudinary.com/dar4ws6v6/image/upload/v1696946472/sanskriti-removebg-preview_bufsfk.png" alt=""></span>
+        <nav class="navbar" id="navbar">
+            <a href="/">home</a>
+            <a href="/article">write an article</a>
+
+        </nav>
+        <nav class="navbar" id="navbar">
+            <a href="/user/{{user.username}}">{{user.username}}</a>
+            <a href="/auth/logout">logout</a>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-bars" id="menubars" onclick="togglefunction()" onmouseleave="removetoggle()"></i>
+
+        </div>
+    </header>
+    <section class="section-box" id="featured-blog">
+        <h1>My Articles</h1>
+        <div class="box-container">
+            {{#if user.articles.length}}
+            {{#each user.articles}}
+            <a href="/{{urlTitle}}">
+                <div class="box" data-aos="slide-up">
+                    <img id="imgk" src="{{postimage}}" alt="">
+                    <p class="blog-title truncate-title">{{this.headingtitle}}</p>
+                    <div class="post-detail">
+                        <p>{{formatDate createdAt}}</p>
+                        <p>Posted by {{author.username}}</p>
+                        <p>Status: {{status}}</p>
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+            {{else}}
+            <p>You have not posted any articles yet.</p>
+            {{/if}}
+        </div>
+    </section> 
+     <footer>
+        <div class="footer-1">
+            <div class="blogging">
+                <h1>SanskritiSarita</h1>
+                <p>The reader's choice</p>
+                <p>Turn your ideology into perspective </p>
+
+            </div>
+            <div class="follow-us">
+                <h1>follow us on</h1>
+                <i class="fa-brands fa-instagram"></i>
+                <i id="twitter" class="fa-brands fa-twitter"></i>
+
+            </div>
+        </div>
+        <div class="last">
+            <h>	 &copy;Copyright 2023 SanskritiSarita </h>
+            <p>made with❤️ by Saurabh kumar</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+</body>
+
+</html>

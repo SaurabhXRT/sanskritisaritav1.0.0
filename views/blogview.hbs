@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"content="{{article.description}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ article.headingtitle }}</title>
+    <link rel="stylesheet" href="blogview.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+    <script  src="blogview.js"></script>
+
+</head>
+
+
+<body>
+    <header>
+         <span><img id="logo" src="https://res.cloudinary.com/dar4ws6v6/image/upload/v1696946472/sanskriti-removebg-preview_bufsfk.png" alt=""></span>
+         <nav class="navbar" id="navbar">
+            {{#if username}}
+            <a href="/">home</a>
+            <a href="#latest-blog">latest news</a>
+            <a href="#featured-blog">featured news</a>
+           
+            <a href="/article">write an article</a>
+            <a href="/user/{{username}}">{{username}}</a>
+
+            <a href="/auth/logout">logout</a>
+            {{else}}
+            <a href="/">home</a>
+            <a href="#latest-blog">latest news</a>
+            <a href="#featured-blog">featured news</a>
+            <a href="/signup">signup</a>
+            <a href="/login">login</a>
+            {{/if}}
+        </nav>
+        <div class="icons">
+            <i class="fas fa-bars" id="menubars" onclick="togglefunction()" onmouseleave="removetoggle()"></i>
+
+        </div>
+    </header>
+      <div class="options">
+        <div class="options-option">
+            <a href="/education">Education</a>
+            <a href="/technology">Technology</a>
+            <a href="/politics">Politics</a>
+            <a href="/entertainment">Entertainment</a>
+            <a href="/other">other</a>
+        </div>
+    </div>
+    <section>
+        <div class="blogpost">
+            <div class="blogpost-title">
+                <h1>{{ article.headingtitle }}</h1>
+            </div>
+             <div class="blogpost-description">
+                <h1>{{ article.description }}</h1>
+            </div>
+            <div class="blogpost-detail">
+                <p>{{ formatDate article.createdAt }}</p>
+                <p>posted by {{ article.author.username }}</p>
+            </div>
+            <div class="blogpost-image">
+                <img src="{{ article.postimage }}" alt="">
+            </div>
+            <div class="blogpost-content">
+                {{{article.article }}}
+            </div>
+        </div>
+    </section>
+    <section id="latest-blog">
+
+        <div class="section-left">
+            <h1>Latest mews</h1>
+            {{#each latestArticle}}
+            <a href="/{{this.urlTitle}}">
+                <div class="blog" data-aos="slide-up">
+                    <div class="blog-img">
+                        <img id="img" src="{{this.postimage}}" alt="">
+                    </div>
+                    <div class="blogcontaint">
+                       <p class="blog-title truncate-title">{{this.headingtitle}}</p>
+                        <div class="post-detail">
+                            <p>{{formatDate this.createdAt}}</p>
+                            <p>Posted by {{this.author.username}}</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+
+    </section>
+
+    <section class="section-box" id="featured-blog">
+        <h1>Featured news</h1>
+        <div class="box-container">
+            {{#each featuredArticles}}
+            <a href="/{{this.urlTitle}}">
+                <div class="box" data-aos="slide-up">
+                    <img id="imgk" src="{{this.postimage}}" alt="">
+                    <p class="blog-title truncate-title">{{this.headingtitle}}</p>
+                    <div class="post-detail">
+                        <p>{{formatDate this.createdAt}}</p>
+                        <p>Posted by {{this.author.username}}</p>
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+     <footer>
+        <div class="footer-1">
+            <div class="blogging">
+                <h1>SanskritiSarita</h1>
+                <p>The reader's choice</p>
+                <p>Turn your ideology into perspective </p>
+
+            </div>
+            <div class="follow-us">
+                <h1>follow us on</h1>
+                <i class="fa-brands fa-instagram"></i>
+                <i id="twitter" class="fa-brands fa-twitter"></i>
+
+            </div>
+        </div>
+        <div class="last">
+            <h>	 &copy;Copyright 2023 SanskritiSarita </h>
+            <p>made with❤️ by Saurabh kumar</p>
+        </div>
+    </footer>
+</body>
+
+</html>
