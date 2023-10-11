@@ -135,7 +135,8 @@ header .icons #menubars {
 }
 
 section .blogpost {
-    width: 100%;
+    width: 98%;
+    margin: auto;
 }
 
 section .blogpost .blogpost-image {
