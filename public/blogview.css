@@ -169,6 +169,7 @@ section .blogpost .blogpost-detail {
 
 section .blogpost .blogpost-content {
     margin-top: 1.5rem;
+    width: 100%;
 }
 
  section .blogpost .blogpost-content h1 {
