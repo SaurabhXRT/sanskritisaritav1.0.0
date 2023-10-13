@@ -402,9 +402,6 @@ section .section-left .blog .blogcontaint {
         font-size: 55%;
     }
 
-    header {
-        padding: 1rem 2rem;
-    }
 
     section {
         padding: 2rem;
@@ -488,7 +485,7 @@ section .section-left .blog .blogcontaint {
         width: auto;
     }
     .options{
-        margin-top: 8.5rem;
+        margin-top: 7rem;
       
      
     }
