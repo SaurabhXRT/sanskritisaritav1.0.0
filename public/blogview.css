@@ -52,7 +52,7 @@ header {
     left: 0;
     right: 0;
     background: black;
-    padding: 1rem 9%;
+    padding: 0rem 9%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -135,8 +135,7 @@ header .icons #menubars {
 }
 
 section .blogpost {
-    width: 98%;
-    margin: auto;
+    width: 100%;
 }
 
 section .blogpost .blogpost-image {
@@ -169,10 +168,6 @@ section .blogpost .blogpost-detail {
 
 section .blogpost .blogpost-content {
     margin-top: 1.5rem;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
 }
 
  section .blogpost .blogpost-content h1 {
@@ -402,7 +397,7 @@ section .section-left .blog .blogcontaint {
         font-size: 55%;
     }
 
-
+   
     section {
         padding: 2rem;
     }
@@ -484,11 +479,7 @@ section .section-left .blog .blogcontaint {
         margin-left: 1rem;
         width: auto;
     }
-    .options{
-        margin-top: 7rem;
-      
-     
-    }
+  
     section .blogpost .blogpost-title {
         font-size: 2rem;
         padding: 1.5rem 0rem;
@@ -498,6 +489,12 @@ section .section-left .blog .blogcontaint {
         font-size: 1.5rem;
         /* padding: 1rem 0rem; */
         width: 100%;
+    
+    }
+    .options{
+        margin-top: 7rem;
+      
+       
     
     }
 
