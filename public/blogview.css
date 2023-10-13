@@ -397,7 +397,10 @@ section .section-left .blog .blogcontaint {
         font-size: 55%;
     }
 
-   
+    header {
+        padding: 0rem 2rem;
+    }
+
     section {
         padding: 2rem;
     }
