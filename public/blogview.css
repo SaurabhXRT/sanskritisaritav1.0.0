@@ -52,7 +52,7 @@ header {
     left: 0;
     right: 0;
     background: black;
-    padding: 0rem 9%;
+    padding: 1rem 9%;
     display: flex;
     align-items: center;
     justify-content: space-between;
