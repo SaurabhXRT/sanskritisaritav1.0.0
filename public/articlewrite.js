@@ -18,7 +18,7 @@ $(".article-form").submit(function (event) {
   // Send the form data with Ajax
   $.ajax({
     type: "POST",
-    url: "https://khabarkasafar.onrender.com/post/articlepost",
+    url: "http://127.0.0.1:5000/articlepost",
     data: formData,
     processData: false,
     contentType: false,
