@@ -11,7 +11,9 @@ $(document).ready(function () {
 $(".article-form").submit(function (event) {
   event.preventDefault(); // Prevent the form from submitting normally
 
-  var formData = new FormData(this); // Get the form data
+  var formData = new FormData(this); 
+  var username = $('#username').val();
+  formData.append('username', username);
 
   // Send the form data with Ajax
   $.ajax({
