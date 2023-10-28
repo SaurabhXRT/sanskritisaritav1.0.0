@@ -271,6 +271,7 @@ section .contact .contact-form .form form button {
     box-shadow: var(--box-shadow);
     border-radius: 1rem;
 }
+
 footer {
     background-color: black;
     color: #fff;
@@ -323,9 +324,7 @@ footer .footer-1 .follow-us #twitter {
         font-size: 55%;
     }
 
-    header {
-        padding: 1rem 2rem;
-    }
+   
 
     section {
         padding: 2rem;
@@ -415,7 +414,6 @@ footer .footer-1 .follow-us #twitter {
     section .contact .contact-pic{
         width: 100%;
     }
-   
    
 
 }
