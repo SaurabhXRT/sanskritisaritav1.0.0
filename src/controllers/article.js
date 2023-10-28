@@ -66,6 +66,7 @@ router.post("/articlepost", checkAuth, async (req, res) => {
       title: req.body.title,
       headingtitle: req.body.headingtitle,
       description: req.body.description,
+      keywords: req.body.keywords,
       category: req.body.category,
       article: req.body.article,
       postimage,
