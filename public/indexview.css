@@ -218,15 +218,16 @@ section .contact {
     box-shadow: var(--box-shadow);
     padding: 1rem;
     margin-top: 1rem;
+    display: flex;
 
 }
 
-/*section .contact .contact-form {
-    background-image: url('public/image-6.jpg');
-    background-size: cover;
-
-}*/
-
+section .contact .contact-form{
+    width: 50%;
+}
+section .contact .contact-pic{
+    width: 50%;
+}
 section .contact .contact-form .form form {
     display: flex;
     flex-direction: column;
@@ -250,9 +251,7 @@ section .contact .contact-form .form form input {
 
 }
 
-section .contact .contact-form .form {
-    width: 40%;
-}
+
 
 #message {
     margin-top: 1rem;
@@ -272,7 +271,6 @@ section .contact .contact-form .form form button {
     box-shadow: var(--box-shadow);
     border-radius: 1rem;
 }
-
 footer {
     background-color: black;
     color: #fff;
@@ -403,6 +401,21 @@ footer .footer-1 .follow-us #twitter {
         font-size: 1.5rem;
         color: #fff;
     }
+    section .contact {
+        box-shadow: var(--box-shadow);
+        padding: 1rem;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    section .contact .contact-form{
+        width: 100%;
+    }
+    section .contact .contact-pic{
+        width: 100%;
+    }
+   
    
 
 }
