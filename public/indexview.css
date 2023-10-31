@@ -381,7 +381,9 @@ footer .footer-1 .follow-us #twitter {
         font-size: 55%;
     }
 
-   
+     header {
+        padding: 1rem 2rem;
+    }
 
     section {
         padding: 2rem;
