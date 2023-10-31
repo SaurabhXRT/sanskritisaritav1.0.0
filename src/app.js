@@ -105,6 +105,9 @@ app.use("/user", userController);
 const adminController = require("./controllers/admin");
 app.use("/admin", adminController);
 
+const messageController = require("./controllers/message");
+app.use("/message", messageController);
+
 // const homeController = require("./controllers/admin");
 // app.use("/home", homeController);
 
