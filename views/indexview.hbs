@@ -227,15 +227,16 @@
         <div class="contact">
             <div class="contact-form">
                 <div class="form">
-                    <form action="#" >
-                        <label for="name"> full name</label>
-                        <input type="text" placeholder="full name" required>
-                        <label for="email">email</label>
-                        <input type="text" placeholder="email" required>
-                        <label for="message">message</label>
-                        <textarea name="" placeholder="enter your message" id="message" cols="30" rows="10"
+                      <form id="contact-form" >
+                        <div class="message-status"></div>
+                        <label for="name">Full Name</label>
+                        <input type="text" name="name" placeholder="Full Name" required>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" placeholder="Enter your message" cols="30" rows="10"
                             required></textarea>
-                        <button>send message</button>
+                        <button type="submit">Send Message</button>
 
                     </form>
                 </div>
