@@ -2,15 +2,11 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-// const path = require("path");
 const jwt = require("jsonwebtoken");
-//const dotenv = require("dotenv");
-//const User = require("../model/userModel");
 const db = require("../config/db");
 //const checkAuth = require("../middleware/checkauth");
  const Article = require("../model/articlePost");
-// const Comment = require("./model/commentModel");
-
+ const BreakingNews = require('../model/breakingNews');
 
 const router = express.Router();
 app.use(cookieParser());
@@ -18,17 +14,19 @@ app.use(bodyParser.json());
 
 router.get("/", async (req, res) => {
     try {
+      const breakingNews = await BreakingNews.find().sort('-timestamp');
       const carouselArticles = await Article.find({
         articleCategory: "Carousel",
         status: "Approved",
       })
-      
+        .limit(5)
         .populate("author", "username");
   
       const featuredArticles = await Article.find({
         articleCategory: "Featured",
         status: "Approved",
       })
+        .limit(6)
         .sort({ createdAt: -1 })
         .populate("author", "username");
   
@@ -36,6 +34,7 @@ router.get("/", async (req, res) => {
         articleCategory: "Normal",
         status: "Approved",
       })
+        .limit(6)
         .sort({ createdAt: -1 })
         .populate("author", "username");
 
@@ -47,6 +46,7 @@ router.get("/", async (req, res) => {
         carouselArticles,
         featuredArticles,
         latestArticle,
+        breakingNews
       });
     } catch (err) {
       console.log(err);
@@ -56,6 +56,7 @@ router.get("/", async (req, res) => {
 
   router.get("/education", async (req, res) => {
     try {
+      const breakingNews = await BreakingNews.find().sort('-timestamp');
       const carouselArticles = await Article.find({
         articleCategory: "Carousel",
         status: "Approved",
@@ -90,6 +91,7 @@ router.get("/", async (req, res) => {
         carouselArticles,
         featuredArticles,
         latestArticle,
+        breakingNews
       });
     } catch (err) {
       console.log(err);
@@ -99,6 +101,7 @@ router.get("/", async (req, res) => {
 
   router.get("/technology", async (req, res) => {
     try {
+      const breakingNews = await BreakingNews.find().sort('-timestamp');
       const carouselArticles = await Article.find({
         articleCategory: "Carousel",
         status: "Approved",
@@ -133,6 +136,7 @@ router.get("/", async (req, res) => {
         carouselArticles,
         featuredArticles,
         latestArticle,
+        breakingNews
       });
     } catch (err) {
       console.log(err);
@@ -142,6 +146,7 @@ router.get("/", async (req, res) => {
 
   router.get("/politics", async (req, res) => {
     try {
+      const breakingNews = await BreakingNews.find().sort('-timestamp');
       const carouselArticles = await Article.find({
         articleCategory: "Carousel",
         status: "Approved",
@@ -175,6 +180,7 @@ router.get("/", async (req, res) => {
         carouselArticles,
         featuredArticles,
         latestArticle,
+        breakingNews
       });
     } catch (err) {
       console.log(err);
@@ -183,6 +189,7 @@ router.get("/", async (req, res) => {
   });
   router.get("/entertainment", async (req, res) => {
     try {
+      const breakingNews = await BreakingNews.find().sort('-timestamp');
       const carouselArticles = await Article.find({
         articleCategory: "Carousel",
         status: "Approved",
@@ -217,6 +224,7 @@ router.get("/", async (req, res) => {
         carouselArticles,
         featuredArticles,
         latestArticle,
+        breakingNews
       });
     } catch (err) {
       console.log(err);
@@ -227,6 +235,7 @@ router.get("/", async (req, res) => {
 
   router.get("/other", async (req, res) => {
     try {
+      const breakingNews = await BreakingNews.find().sort('-timestamp');
       const carouselArticles = await Article.find({
         articleCategory: "Carousel",
         status: "Approved",
@@ -261,6 +270,7 @@ router.get("/", async (req, res) => {
         carouselArticles,
         featuredArticles,
         latestArticle,
+        breakingNews
       });
     } catch (err) {
       console.log(err);
