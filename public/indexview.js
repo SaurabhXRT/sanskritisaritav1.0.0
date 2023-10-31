@@ -83,3 +83,22 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function () {
+    $('#contact-form').submit(function (event) {
+      event.preventDefault();
+  
+      $.ajax({
+        type: 'POST',
+        url: '/message/submit',
+        data: $(this).serialize(),
+        success: function (response) {
+          $('.message-status').html('<p>' + response + '</p>');
+        },
+        error: function (error) {
+          console.error(error);
+        },
+      });
+    });
+  });
+  
+
