@@ -134,6 +134,29 @@
             <a href="/other">other</a>
         </div>
     </div>
+     <section>
+        <div class="breaking">
+            <div class="breaking-news">
+                <h1>Breaking News</h1>
+            </div>
+            <marquee behavior="scroll" direction="left">
+                <div class="breaking-content">
+
+                    {{#each latestArticle}}
+
+                    <div class="breaking-title">
+                        <a href="/{{this.urlTitle}}">
+                            <p class="blog-title">{{this.headingtitle}}</p>
+                        </a>
+                    </div>
+
+                    {{/each}}
+
+                </div>
+            </marquee>
+        </div>
+
+    </section>
     
     <section>
         <div class="owl-carousel owl-theme">
