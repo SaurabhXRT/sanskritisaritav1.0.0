@@ -79,12 +79,13 @@
             <marquee behavior="scroll" direction="left">
                 <div class="breaking-content">
 
-                    {{#each latestArticle}}
+                  
+                    {{#each  breakingNews}}
 
                     <div class="breaking-title">
-                        <a href="/{{this.urlTitle}}">
-                            <p class="blog-title">{{this.headingtitle}}</p>
-                        </a>
+                        
+                            <p class="blog-title">{{this.title}}</p>
+                       
                     </div>
 
                     {{/each}}
