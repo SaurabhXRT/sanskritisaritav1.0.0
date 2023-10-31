@@ -318,6 +318,63 @@ footer .footer-1 .follow-us #twitter {
 .post-detail {
     margin-top: 1.5rem;
 }
+.breaking {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.5rem; 
+    gap: 2.3rem;
+  
+}
+
+
+
+.breaking-news{
+    height:4rem;
+    background: black;
+    color:#fff;
+    position:relative;
+    width: 20rem;
+    text-align:center;
+    line-height:4rem;
+}
+.breaking-news:after{
+    content:"";
+    position:absolute;
+    height:0;
+    width:0;
+    left:100%;
+    top:0;
+    border:20px solid transparent;
+    border-left: 20px solid black;
+    z-index: 1000;
+}
+
+.breaking-content {
+    display: flex;
+  
+    gap: 1rem;
+   
+   
+}
+
+.breaking-content a {
+    text-decoration: none;
+    color:black;
+}
+
+.breaking-content a:hover {
+    color: var(--red); 
+}
+.breaking-title{
+    white-space: nowrap;
+    font-size: 2rem;
+    
+
+}
+.blog-title {
+    font-weight: bold;
+}
 
 @media(max-width:991px) {
     html {
@@ -414,6 +471,27 @@ footer .footer-1 .follow-us #twitter {
     section .contact .contact-pic{
         width: 100%;
     }
+    .breaking-news{
+        height:4rem;
+        background: black;
+        color:#fff;
+        position:relative;
+        width: 20rem;
+        text-align:center;
+        line-height:4rem;
+    }
+    .breaking-news:after{
+        content:"";
+        position:absolute;
+        height:0;
+        width:0;
+        left:100%;
+        top:0;
+        border:18px solid transparent;
+        border-left: 18px solid black;
+        z-index: 1000;
+    }
+   
    
 
 }
