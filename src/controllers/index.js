@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 router.get("/", async (req, res) => {
     try {
-      const breakingNews = await BreakingNews.find().sort('-timestamp');
+      const breakingNews = await BreakingNews.find().sort('-timestamp').limit(5);
       const carouselArticles = await Article.find({
         articleCategory: "Carousel",
         status: "Approved",
@@ -56,7 +56,7 @@ router.get("/", async (req, res) => {
 
   router.get("/education", async (req, res) => {
     try {
-      const breakingNews = await BreakingNews.find().sort('-timestamp');
+      const breakingNews = await BreakingNews.find().sort('-timestamp').limit(5);
       const carouselArticles = await Article.find({
         articleCategory: "Carousel",
         status: "Approved",
@@ -101,7 +101,7 @@ router.get("/", async (req, res) => {
 
   router.get("/technology", async (req, res) => {
     try {
-      const breakingNews = await BreakingNews.find().sort('-timestamp');
+      const breakingNews = await BreakingNews.find().sort('-timestamp').limit(5);
       const carouselArticles = await Article.find({
         articleCategory: "Carousel",
         status: "Approved",
@@ -146,7 +146,7 @@ router.get("/", async (req, res) => {
 
   router.get("/politics", async (req, res) => {
     try {
-      const breakingNews = await BreakingNews.find().sort('-timestamp');
+      const breakingNews = await BreakingNews.find().sort('-timestamp').limit(5);
       const carouselArticles = await Article.find({
         articleCategory: "Carousel",
         status: "Approved",
@@ -189,7 +189,7 @@ router.get("/", async (req, res) => {
   });
   router.get("/entertainment", async (req, res) => {
     try {
-      const breakingNews = await BreakingNews.find().sort('-timestamp');
+      const breakingNews = await BreakingNews.find().sort('-timestamp').limit(5);
       const carouselArticles = await Article.find({
         articleCategory: "Carousel",
         status: "Approved",
@@ -235,7 +235,7 @@ router.get("/", async (req, res) => {
 
   router.get("/other", async (req, res) => {
     try {
-      const breakingNews = await BreakingNews.find().sort('-timestamp');
+      const breakingNews = await BreakingNews.find().sort('-timestamp').limit(5);
       const carouselArticles = await Article.find({
         articleCategory: "Carousel",
         status: "Approved",
@@ -310,6 +310,8 @@ router.get("/", async (req, res) => {
         .sort({ createdAt: -1 })
         .limit(6)
         .populate("author", "username");
+
+      const breakingNews = await BreakingNews.find().sort('-timestamp').limit(5);
         
       article.views++;
       await article.save();
@@ -322,6 +324,7 @@ router.get("/", async (req, res) => {
         username,
         featuredArticles,
         latestArticle,
+        breakingNews
       });
     } catch (err) {
       console.log(err);
