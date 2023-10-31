@@ -375,7 +375,16 @@ footer .footer-1 .follow-us #twitter {
 .blog-title {
     font-weight: bold;
 }
-
+.message-status p{
+    text-align: center;
+    padding: 0.6rem;
+    background-color: #4CAF50; 
+    color: #fff; 
+    font-size: 1rem;
+    border-radius: 0.5rem;
+   
+ 
+  }
 @media(max-width:991px) {
     html {
         font-size: 55%;
