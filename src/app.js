@@ -99,9 +99,6 @@ app.get("/login", (req, res) => {
   res.render("login");
 });
 
-app.get("/article", checkAuth, (req, res) => {
-  res.render("articlewrite");
-});
 
 const indexController = require("./controllers/index");
 app.use("/", indexController);
