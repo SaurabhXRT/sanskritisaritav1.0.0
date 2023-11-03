@@ -16,8 +16,6 @@ const User = require("./model/userModel");
 const Article = require("./model/articlePost");
 const Comment = require("./model/commentModel");
 
-// const SecretKey = require("./config/crypto");
-
 app.use((req, res, next) => {
   res.setHeader("X-Content-Type-Options", "nosniff");
   res.setHeader("X-Frame-Options", "DENY");
@@ -38,6 +36,7 @@ hbs.registerHelper("formatDate", (date) => {
   const formattedDate = new Date(date).toLocaleDateString("en-GB");
   return formattedDate;
 });
+
 
 // const adminUsername = "";
 // const adminPassword = "";
@@ -64,7 +63,6 @@ hbs.registerHelper("formatDate", (date) => {
 //   }
 // })();
 
-
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -73,7 +71,6 @@ app.use(express.urlencoded({ extended: false }));
 const template_path = path.join(__dirname, "../views");
 app.set("views", template_path);
 app.set("view engine", "hbs");
-
 
 
 const articleController = require("./controllers/article");
@@ -91,24 +88,23 @@ app.use("/admin", adminController);
 const messageController = require("./controllers/message");
 app.use("/message", messageController);
 
-const indexController = require("./controllers/index");
-app.use("/", indexController);
+app.get("/privacy-policy", (req, res) =>{
+  res.render("privacypolicy");
+})
 
 app.get("/signup", (req, res) => {
   res.render("signup");
 });
-
 app.get("/login", (req, res) => {
   res.render("login");
 });
-
 app.get("/article", checkAuth, (req, res) => {
   res.render("articlewrite");
 });
 
-app.get("/saurabh", (req, res) =>{
-  res.send("privacypolicy");
-});
+
+const indexController = require("./controllers/index");
+app.use("/", indexController);
 
 //app listening
 app.listen(PORT, () => {
