@@ -107,7 +107,7 @@ app.get("/article", checkAuth, (req, res) => {
 });
 
 app.get("/privacyandpolicy", (req, res) =>{
-  res.render("privacypolicy");
+  res.send("privacypolicy");
 });
 
 //app listening
