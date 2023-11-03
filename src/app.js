@@ -106,7 +106,7 @@ app.get("/article", checkAuth, (req, res) => {
   res.render("articlewrite");
 });
 
-app.get("/privacyandpolicy", (req, res) =>{
+app.get("/saurabh", (req, res) =>{
   res.send("privacypolicy");
 });
 
