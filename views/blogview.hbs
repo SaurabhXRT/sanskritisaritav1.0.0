@@ -4,27 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"content="{{article.description}}">
-    <meta name="keywords" content="{{article.keywords}}">
-    <meta name="keywords" content="Technology News, Politics Updates, Entertainment Headlines, Educational Insights, Breaking News, Articles, Current Affairs, Digital Innovations, Political Analysis, Entertainment Industry, Education Trends, News Articles">
+    <meta name="description" content="Sanskritisarita {{article.description}}">
+    <meta name="keywords" content="Sanskritisarita {{article.keywords}}">
+    <meta name="keywords"
+        content=" Sanskritisarita, Technology News, Politics Updates, Entertainment Headlines, Educational Insights, Breaking News, Articles, Current Affairs, Digital Innovations, Political Analysis, Entertainment Industry, Education Trends, News Articles">
     <meta name="google-adsense-account" content="ca-pub-9592455128454917">
     <meta property="og:title" content="Sanskritisarita -News Articles">
-    <meta property="og:description" content="Stay informed with the latest news, technology updates, politics, entertainment, and education. Explore breaking stories and in-depth coverage.">
-    <meta property="og:image" content="https://res.cloudinary.com/dar4ws6v6/image/upload/v1696946472/sanskriti-removebg-preview_bufsfk.png">
+    <meta property="og:description"
+        content="Stay informed with the latest news, technology updates, politics, entertainment, and education. Explore breaking stories and in-depth coverage.">
+    <meta property="og:image"
+        content="https://res.cloudinary.com/dar4ws6v6/image/upload/v1696946472/sanskriti-removebg-preview_bufsfk.png">
     <meta property="og:url" content="https://www.sanskritisarita.xyz/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Sanskritisarita">
     <title> {{ article.headingtitle }} - Sanskritisarita</title>
-    <link rel="icon" href="https://res.cloudinary.com/dar4ws6v6/image/upload/v1696946472/sanskriti-removebg-preview_bufsfk.png" type="image/x-icon">
-    <link rel="shortcut icon" href="https://res.cloudinary.com/dar4ws6v6/image/upload/v1696946472/sanskriti-removebg-preview_bufsfk.png" type="image/x-icon">
+    <link rel="icon"
+        href="https://res.cloudinary.com/dar4ws6v6/image/upload/v1696946472/sanskriti-removebg-preview_bufsfk.png"
+        type="image/x-icon">
+    <link rel="shortcut icon"
+        href="https://res.cloudinary.com/dar4ws6v6/image/upload/v1696946472/sanskriti-removebg-preview_bufsfk.png"
+        type="image/x-icon">
     <link rel="stylesheet" href="https://res.cloudinary.com/dar4ws6v6/raw/upload/v1699021502/blogview_mlckas.css" defer>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
-    <script  src="blogview.js"></script>
-      <script type="application/ld+json">
+    <script src="blogview.js"></script>
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -36,29 +43,29 @@
    {
      "@context": "https://schema.org",
      "@type": "WebSite",
-     "name": "Sanskritisarita - News Articles",
+     "name": "Sanskritisarita",
      "url": "https://www.sanskritisarita.xyz",
-     "description": "Stay informed with the latest news, technology updates, politics, entertainment, and education. Explore breaking stories and in-depth coverage.",
+     "description": "Stay informed with the latest news, technology updates, politics, entertainment, and education. Explore breaking stories and in-depth coverage."
 
     }
     </script>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9592455128454917" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9592455128454917"
+        crossorigin="anonymous"></script>
 </head>
-
 
 <body>
     <header>
-         <span><img id="logo" src="https://res.cloudinary.com/dar4ws6v6/image/upload/v1696946472/sanskriti-removebg-preview_bufsfk.png" alt=""></span>
-         <nav class="navbar" id="navbar">
+        <span><img id="logo"
+                src="https://res.cloudinary.com/dar4ws6v6/image/upload/v1696946472/sanskriti-removebg-preview_bufsfk.png"
+                alt=""></span>
+        <nav class="navbar" id="navbar">
             {{#if username}}
             <a href="/">home</a>
             <a href="#latest-blog">latest news</a>
             <a href="#featured-blog">featured news</a>
-           
             <a href="https://sanskritiwrite.onrender.com" target="_blank">write an article</a>
             <a href="/user/{{username}}">{{username}}</a>
-
             <a href="/auth/logout">logout</a>
             {{else}}
             <a href="/">home</a>
@@ -70,10 +77,9 @@
         </nav>
         <div class="icons">
             <i class="fas fa-bars" id="menubars" onclick="togglefunction()" onmouseleave="removetoggle()"></i>
-
         </div>
     </header>
-      <div class="options">
+    <div class="options">
         <div class="options-option">
             <a href="/education">Education</a>
             <a href="/technology">Technology</a>
@@ -82,36 +88,28 @@
             <a href="/other">other</a>
         </div>
     </div>
-     <section>
+    <section>
         <div class="breaking">
             <div class="breaking-news">
                 <h1>Breaking News</h1>
             </div>
             <marquee behavior="scroll" direction="left">
                 <div class="breaking-content">
-
-                  
-                    {{#each  breakingNews}}
-
+                    {{#each breakingNews}}
                     <div class="breaking-title">
-                        
-                            <p class="blog-title">{{this.title}}</p>
-                       
+                        <p class="blog-title">{{this.title}}</p>
                     </div>
-
                     {{/each}}
-
                 </div>
             </marquee>
         </div>
-
     </section>
     <section>
         <div class="blogpost">
             <div class="blogpost-title">
                 <h1>{{ article.headingtitle }}</h1>
             </div>
-             <div class="blogpost-description">
+            <div class="blogpost-description">
                 <h1>{{ article.description }}</h1>
             </div>
             <div class="blogpost-detail">
@@ -127,7 +125,6 @@
         </div>
     </section>
     <section id="latest-blog">
-
         <div class="section-left">
             <h1>Latest mews</h1>
             {{#each latestArticle}}
@@ -137,7 +134,7 @@
                         <img id="img" src="{{this.postimage}}" alt="">
                     </div>
                     <div class="blogcontaint">
-                       <p class="blog-title truncate-title">{{this.headingtitle}}</p>
+                        <p class="blog-title truncate-title">{{this.headingtitle}}</p>
                         <div class="post-detail">
                             <p>{{formatDate this.createdAt}}</p>
                             <p>Posted by {{this.author.username}}</p>
@@ -147,9 +144,7 @@
             </a>
             {{/each}}
         </div>
-
     </section>
-
     <section class="section-box" id="featured-blog">
         <h1>Featured news</h1>
         <div class="box-container">
@@ -167,32 +162,21 @@
             {{/each}}
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-     <footer>
+    <footer>
         <div class="footer-1">
             <div class="blogging">
                 <h1>SanskritiSarita</h1>
                 <p>The reader's choice</p>
                 <p>Turn your ideology into perspective </p>
-
             </div>
             <div class="follow-us">
                 <h1>follow us on</h1>
                 <i class="fa-brands fa-instagram"></i>
                 <i id="twitter" class="fa-brands fa-twitter"></i>
-
             </div>
         </div>
         <div class="last">
-            <h>	 &copy;Copyright 2023 SanskritiSarita </h>
+            <h> &copy;Copyright 2023 SanskritiSarita </h>
             <p>made with❤️ by Saurabh kumar</p>
         </div>
     </footer>
