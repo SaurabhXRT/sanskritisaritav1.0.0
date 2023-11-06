@@ -9,7 +9,7 @@ function togglefunction() {
 }
 
 
- // Function to handle smooth scrolling
+
 function smoothScroll(target) {
     const targetElement = document.querySelector(target);
     if (targetElement) {
@@ -21,7 +21,7 @@ function smoothScroll(target) {
     }
 }
 
-// Attach click event listeners to the "Latest Blog" and "Featured Blog" links
+
 document.addEventListener("DOMContentLoaded", () => {
     const latestBlogLink = document.querySelector("a[href='#latest-blog']");
     const featuredBlogLink = document.querySelector("a[href='#featured-blog']");
@@ -60,11 +60,11 @@ $(document).ready(function() {
   function applyTruncation() {
       var maxWidth = $(window).width();
       $('.truncate-title').each(function() {
-          var originalTitle = $(this).text(); // Store the original text
+          var originalTitle = $(this).text(); 
           var truncatedTitle;
 
           if (maxWidth <= 768) {
-              truncatedTitle = truncateText(originalTitle, 100);
+              truncatedTitle = truncateText(originalTitle, 50);
           } else if (maxWidth <= 991) {
               truncatedTitle = truncateText(originalTitle, 50);
           } else {
