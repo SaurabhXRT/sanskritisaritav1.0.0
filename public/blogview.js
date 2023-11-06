@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       const postId = $(this).data("post-id");
 
-      const username = "{{username}}"; // Get the logged-in username from the server-side variable
+      const username = "{{username}}"; 
 
       if (!username) {
           // User is not logged in, redirect to login page
@@ -112,7 +112,7 @@ $(document).ready(function () {
         event.preventDefault();
         // var formData = $(this).serialize(); 
 
-        const username = "{{username}}"; // Get the logged-in username from the server-side variable
+        const username = "{{username}}"; 
 
         if (!username) {
             // User is not logged in, redirect to login page
@@ -169,11 +169,11 @@ $(document).ready(function() {
     function applyTruncation() {
         var maxWidth = $(window).width();
         $('.truncate-title').each(function() {
-            var originalTitle = $(this).text(); // Store the original text
+            var originalTitle = $(this).text(); 
             var truncatedTitle;
 
             if (maxWidth <= 768) {
-                truncatedTitle = truncateText(originalTitle, 100);
+                truncatedTitle = truncateText(originalTitle, 50);
             } else if (maxWidth <= 991) {
                 truncatedTitle = truncateText(originalTitle, 50);
             } else {
